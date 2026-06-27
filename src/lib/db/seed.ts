@@ -48,8 +48,8 @@ export async function seedDemoData(): Promise<{
     userCount++;
   }
 
-  // Simulate 500 successful claims + 200 failed attempts over 45 seconds
-  for (let i = 0; i < 500; i++) {
+  // Simulate 10 successful claims + 5 failed attempts
+  for (let i = 0; i < 10; i++) {
 
     const userId = userIds[Math.floor(Math.random() * userIds.length)];
     const region = ALL_REGION_CODES[Math.floor(Math.random() * ALL_REGION_CODES.length)];
@@ -65,7 +65,7 @@ export async function seedDemoData(): Promise<{
   }
 
   // Failed attempts (sold out + duplicates)
-  for (let i = 0; i < 150; i++) {
+  for (let i = 0; i < 5; i++) {
 
     const userId = userIds[Math.floor(Math.random() * userIds.length)];
     const region = ALL_REGION_CODES[Math.floor(Math.random() * ALL_REGION_CODES.length)];
@@ -86,7 +86,7 @@ export async function seedDemoData(): Promise<{
     SK: 'INVENTORY',
     entityType: 'INVENTORY',
     available: 0,
-    reserved: 500,
+    reserved: 50,
   });
   await markSoldOut(drop1.dropId);
 
@@ -116,7 +116,7 @@ export async function seedDemoData(): Promise<{
   });
 
   // Add some queue entries for the live drop
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 5; i++) {
     const userId = userIds[Math.floor(Math.random() * userIds.length)];
     const region = ALL_REGION_CODES[Math.floor(Math.random() * ALL_REGION_CODES.length)];
     await logQueueEntry({
