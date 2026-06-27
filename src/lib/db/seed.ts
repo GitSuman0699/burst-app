@@ -97,7 +97,7 @@ export async function seedDemoData(): Promise<{
   const drop2 = await createDrop({
     title: 'NVIDIA GeForce RTX 5090 Founders Edition',
     description: 'The ultimate GPU has arrived. Featuring the next-generation Blackwell architecture, 32GB of GDDR7 memory, and unrivaled AI performance. Claim your spot in line to secure the most sought-after piece of hardware on the planet.',
-    imageUrl: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80',
+    imageUrl: '/images/rtx-5090.png',
     price: 199900, // $1999.00
     totalInventory: 100,
     scheduledStart: new Date(Date.now() - 10 * 60 * 1000).toISOString(), // started 10 min ago
@@ -135,7 +135,7 @@ export async function seedDemoData(): Promise<{
   const drop3 = await createDrop({
     title: 'Tesla Cybertruck Foundation Series — Priority Delivery Token',
     description: 'Skip the massive waitlist. This exclusive reservation token guarantees priority delivery of your dual-motor Foundation Series Cybertruck within the next 30 days. Fully refundable deposit.',
-    imageUrl: 'https://images.unsplash.com/photo-1561005391-764722ebc87c?w=800&q=80',
+    imageUrl: '/images/cybertruck.png',
     price: 100000, // $1000.00
     totalInventory: 200,
     scheduledStart: new Date(Date.now() + 2 * 60 * 60 * 1000).toISOString(), // 2 hours from now
