@@ -24,13 +24,13 @@ export async function seedDemoData(): Promise<{
   // ---- Drop 1: Completed / Sold Out ----
   // This is the drop that has a full Drop Report with queue entries
   const drop1 = await createDrop({
-    title: 'Air Jordan 1 Retro High OG — Chicago',
-    description: 'The legendary Chicago colorway returns. Premium leather construction with the iconic red, white, and black color blocking. Limited to 500 pairs worldwide.',
-    imageUrl: 'https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80',
-    price: 17000, // $170.00
-    totalInventory: 500,
+    title: 'Sony PlayStation 5 Pro — 30th Anniversary Limited Edition Bundle',
+    description: "Celebrate three decades of play with the ultra-rare 30th Anniversary PS5 Pro Bundle. Includes the PS5 Pro console featuring the original PS1 gray colorway, DualSense Edge controller, and exclusive collector's items. Strictly limited to 50 units globally.",
+    imageUrl: 'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=800&q=80',
+    price: 99999, // $999.99
+    totalInventory: 50,
     scheduledStart: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(), // 3 days ago
-    sellerId: 'seller-nike-demo',
+    sellerId: 'seller-sony-demo',
   });
 
   // Activate and sell out
@@ -95,13 +95,13 @@ export async function seedDemoData(): Promise<{
   // ---- Drop 2: Live / Active ----
   // This is the drop judges can interact with
   const drop2 = await createDrop({
-    title: 'Neon Genesis Collection — Artist Print #001',
-    description: 'First edition signed print by acclaimed digital artist VOID_MSTR. Gallery-quality giclée on 300gsm cotton rag. Each print includes a certificate of authenticity.',
-    imageUrl: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&q=80',
-    price: 25000, // $250.00
+    title: 'NVIDIA GeForce RTX 5090 Founders Edition',
+    description: 'The ultimate GPU has arrived. Featuring the next-generation Blackwell architecture, 32GB of GDDR7 memory, and unrivaled AI performance. Claim your spot in line to secure the most sought-after piece of hardware on the planet.',
+    imageUrl: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80',
+    price: 199900, // $1999.00
     totalInventory: 100,
     scheduledStart: new Date(Date.now() - 10 * 60 * 1000).toISOString(), // started 10 min ago
-    sellerId: 'seller-artist-demo',
+    sellerId: 'seller-nvidia-demo',
   });
 
   await activateDrop(drop2.dropId);
@@ -133,13 +133,13 @@ export async function seedDemoData(): Promise<{
 
   // ---- Drop 3: Upcoming ----
   const drop3 = await createDrop({
-    title: 'Midnight Festival VIP Pass — Summer 2026',
-    description: 'Exclusive VIP access to the Midnight Festival. Includes backstage access, artist meet & greet, premium viewing area, and festival merchandise bundle. Limited to 200 passes.',
-    imageUrl: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80',
-    price: 35000, // $350.00
+    title: 'Tesla Cybertruck Foundation Series — Priority Delivery Token',
+    description: 'Skip the massive waitlist. This exclusive reservation token guarantees priority delivery of your dual-motor Foundation Series Cybertruck within the next 30 days. Fully refundable deposit.',
+    imageUrl: 'https://images.unsplash.com/photo-1561005391-764722ebc87c?w=800&q=80',
+    price: 100000, // $1000.00
     totalInventory: 200,
     scheduledStart: new Date(Date.now() + 2 * 60 * 60 * 1000).toISOString(), // 2 hours from now
-    sellerId: 'seller-festival-demo',
+    sellerId: 'seller-tesla-demo',
   });
 
   console.log(`[Seed] Drop 3 created: ${drop3.title} (UPCOMING)`);
