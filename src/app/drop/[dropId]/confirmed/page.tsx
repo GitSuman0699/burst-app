@@ -5,7 +5,9 @@ import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import styles from './page.module.css';
 
-export default function ConfirmedPage() {
+import { Suspense } from 'react';
+
+function ConfirmedContent() {
  const params = useParams();
  const searchParams = useSearchParams();
  const dropId = params.dropId as string;
@@ -104,4 +106,12 @@ export default function ConfirmedPage() {
  </div>
  </div>
  );
+}
+
+export default function ConfirmedPage() {
+  return (
+    <Suspense fallback={<div style={{ color: 'white', padding: '2rem', textAlign: 'center' }}>Loading...</div>}>
+      <ConfirmedContent />
+    </Suspense>
+  );
 }
