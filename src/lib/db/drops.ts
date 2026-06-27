@@ -13,7 +13,7 @@ const INVENTORY_SK = 'INVENTORY';
 
 // ---- Mappers ----
 
-function toDropDomain(item: DropItem): Drop {
+export function toDropDomain(item: DropItem): Drop {
   return {
     dropId: item.dropId,
     title: item.title,

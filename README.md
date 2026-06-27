@@ -1,10 +1,10 @@
-# Burst ⚡️
+# Burst
 
 Burst is a specialized, serverless "Drop Engine" designed to handle extreme high-concurrency e-commerce events (hype drops, limited edition releases, sneaker drops, etc.) without crashing or double-booking inventory. 
 
 Built entirely on **Vercel** and **AWS DynamoDB**, Burst proves you can solve complex transactional e-commerce problems without relying on massive, heavy-weight queueing infrastructure (like Redis or Kafka). It embraces a "Zero Stack" serverless philosophy to achieve virtually infinite scale and single-digit millisecond latency.
 
-## 🚀 Features & The Flow
+## Features & The Flow
 
 ### The "Drop" Experience
 1. **Live Inventory Sync:** Users land on the storefront to view upcoming and live drops.
@@ -19,7 +19,7 @@ Built entirely on **Vercel** and **AWS DynamoDB**, Burst proves you can solve co
 - **Payments:** Stripe Checkout + Webhook listener for secure server-to-server confirmation.
 - **Styling:** Custom CSS Modules with a bespoke glassmorphic, dark-mode aesthetic. No generic component libraries.
 
-## 🛠️ Local Development Setup
+## Local Development Setup
 
 To run Burst locally, you will need an AWS account, a Stripe account, and Node.js.
 
@@ -66,11 +66,11 @@ npm run dev
 
 Navigate to `http://localhost:3000/admin` and click **"Run Full Demo Seed"** to populate the database with a completed mock drop and a live interactive drop.
 
-## 🔒 Security Posture
+## Security Posture
 Burst takes e-commerce security seriously:
 - **Server-Side Validation:** The API never trusts the client for user identity. All protected routes (Claims, Orders, Checkouts) securely validate the HTTP-only NextAuth session cookie.
 - **Webhook Hardening:** Payments are strictly finalized via Stripe Webhooks with signature validation, ensuring users cannot bypass the checkout flow.
 - **Duplicate Prevention:** DynamoDB handles duplicate claims at the infrastructure level using conditional expressions.
 
-## 🎨 Design Philosophy
+## Design Philosophy
 Burst embraces software craftsmanship. It eschews standard UI component libraries in favor of a tailor-made interface. By strictly controlling the full stack—from the `transactWrite` database operations to the `onConfirm` React states—Burst delivers an immediate, snappy, and cohesive user experience.
